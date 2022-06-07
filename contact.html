@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/6f55a68bf6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Contacto | Parcial 1 Braian Quispe</title>
+  </head>
+  <body>
+    <header>
+      <div class="overlay" id="overlay"></div>
+      <div class="logo">
+        <img src="./img/logo.png" alt="Logo" width="32">
+        <a href="./index.html" class="header__logo">ISFT N.° 38</a>
+      </div>
+      <nav class="nav" id="nav-menu">
+        <button id="close-menu" class="header__close" type="button" title="Close navbar"><i class="fa-solid fa-xmark"></i></button>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="./index.html" class="nav__link">Instituto</a></li>
+          <li class="nav__item"><a href="" class="nav__link">Comunidad</a></li>
+          <li class="nav__item"><a href="" class="nav__link">Sedes</a></li>
+          <li class="nav__item"><a href="./carreras/index.html" class="nav__link">Oferta académica</a></li>
+          <li class="nav__item"><a href="" class="nav__link">Preinscripción</a></li>
+          <li class="nav__item"><a href="./contact.html" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__toggle" id="toggle-menu" type="button" title="Toggle navbar"><i class="fa-solid fa-bars"></i></button>
+    </header>
+
+    <main>
+      <div class="modal_overlay hidden">
+        <div class="modal" id="modal">
+          <div class="modal__header">
+            <button type="button" title="Close Modal" class="modal__close">&times;</button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__icon">
+              <i class="fa-solid fa-check"></i>
+              <p>¡Se envió el formulario con éxito!</p>
+            </div>
+          </div>
+          <div class="modal__footer">
+            <button type="button" title="OK" class="btn modal__btnOK">Aceptar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h1 class="card__title">Contacto</h1>
+        <form id="frmContact" novalidate>
+          <div class="form_control">
+            <label for="firstname">Nombre</label>
+            <input type="text" id="firstname" name="firstname" data-rules="required: true">
+            <div class="error">
+              <p class="errorMessage"></p>
+            </div>
+          </div>
+
+          <div class="form_control">
+            <label for="lastname">Apellido</label>
+            <input type="text" id="lastname" name="lastname" data-rules="minlength: 3">
+            <div class="error">
+              <p class="errorMessage"></p>
+            </div>
+          </div>
+
+          <div class="form_control">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" data-rules="type: email">
+            <div class="error">
+              <p class="errorMessage"></p>
+            </div>
+          </div>
+
+          <div class="form_control">
+            <label for="age">Edad</label>
+            <input type="number" step="1" data-rules="min: 0, max: 100" name="age" id="age">
+            <div class="error">
+              <p class="errorMessage"></p>
+            </div>
+          </div>
+
+          <fieldset class="form_control">
+            <legend>Sexo</legend>
+            <div class="form_check">
+              <input type="radio" name="sex" value="F" id="F" data-rules="required: radio">
+              <label for="F">F</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+            <div class="form_check">
+              <input type="radio" name="sex" value="M" id="M" data-rules="required: radio">
+              <label for="M">M</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+            <div class="form_check">
+              <input type="radio" name="sex" value="O" id="O" data-rules="required: radio">
+              <label for="O">Otro</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form_control">
+            <label for="country">País</label>
+            <select name="country" id="country" data-rules="required: true">
+              <option value=""></option>
+              <option value="1">Argentina</option>
+              <option value="3">Brasil</option>
+              <option value="2">Chile</option>
+              <option value="4">Uruguay</option>
+            </select>
+            <div class="error">
+              <p class="errorMessage"></p>
+            </div>
+          </div>
+
+          <fieldset class="form_control">
+            <legend>Tema de interés</legend>
+            <div class="form_check">
+              <input type="checkbox" name="interest" id="sports" value="sports" data-rules="required: checkbox">
+              <label for="sports">Deporte</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+            <div class="form_check">
+              <input type="checkbox" name="interest" id="music" value="music" data-rules="required: checkbox">
+              <label for="music">Música</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+            <div class="form_check">
+              <input type="checkbox" name="interest" id="videogames" value="videogames" data-rules="required: checkbox">
+              <label for="videogames">Juegos</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+            <div class="form_check">
+              <input type="checkbox" name="interest" id="tech" value="tech" data-rules="required: checkbox">
+              <label for="tech">Tecnología</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+            <div class="form_check">
+              <input type="checkbox" name="interest" id="other" value="other" data-rules="required: checkbox">
+              <label for="other">Otros</label>
+              <div class="error">
+                <p class="errorMessage"></p>
+              </div>
+            </div>
+          </fieldset>
+        
+          <div class="form_control">
+            <label for="comment">Comentario</label>
+            <textarea name="comment" id="comment"></textarea>
+          </div>
+          <button class="btn btn-dark form_button" type="submit">Enviar</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <section>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+      </section>
+      <section>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+      </section>
+      <section>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+      </section>
+    </footer>
+
+    <script src="./js/scripts.js"></script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
